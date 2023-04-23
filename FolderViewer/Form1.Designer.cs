@@ -28,30 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.MaskTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.KeyWordsTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.DiskComboBox = new System.Windows.Forms.ComboBox();
+            this.SearchButton = new System.Windows.Forms.Button();
+            this.StopButton = new System.Windows.Forms.Button();
+            this.SubFoldersCheckBox = new System.Windows.Forms.CheckBox();
+            this.SearchResultLabel = new System.Windows.Forms.Label();
+            this.listView = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ListRadio = new System.Windows.Forms.RadioButton();
+            this.TileRadio = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
-            // textBox1
+            // MaskTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 28);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 24);
-            this.textBox1.TabIndex = 0;
+            this.MaskTextBox.Location = new System.Drawing.Point(12, 28);
+            this.MaskTextBox.Multiline = true;
+            this.MaskTextBox.Name = "MaskTextBox";
+            this.MaskTextBox.Size = new System.Drawing.Size(100, 24);
+            this.MaskTextBox.TabIndex = 0;
             // 
             // label1
             // 
@@ -71,82 +73,86 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Key word";
             // 
-            // textBox2
+            // KeyWordsTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(118, 28);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(162, 24);
-            this.textBox2.TabIndex = 3;
+            this.KeyWordsTextBox.Enabled = false;
+            this.KeyWordsTextBox.Location = new System.Drawing.Point(118, 28);
+            this.KeyWordsTextBox.Multiline = true;
+            this.KeyWordsTextBox.Name = "KeyWordsTextBox";
+            this.KeyWordsTextBox.Size = new System.Drawing.Size(162, 24);
+            this.KeyWordsTextBox.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(307, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 16);
+            this.label3.Size = new System.Drawing.Size(39, 16);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Disk";
+            this.label3.Text = "Drive";
             // 
-            // comboBox1
+            // DiskComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(286, 28);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(72, 24);
-            this.comboBox1.TabIndex = 5;
+            this.DiskComboBox.FormattingEnabled = true;
+            this.DiskComboBox.Items.AddRange(new object[] {
+            "C:\\$Recycle.Bin\\"});
+            this.DiskComboBox.Location = new System.Drawing.Point(286, 28);
+            this.DiskComboBox.Name = "DiskComboBox";
+            this.DiskComboBox.Size = new System.Drawing.Size(72, 24);
+            this.DiskComboBox.TabIndex = 5;
             // 
-            // button1
+            // SearchButton
             // 
-            this.button1.Location = new System.Drawing.Point(364, 26);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 26);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = true;
+            this.SearchButton.Location = new System.Drawing.Point(364, 26);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(75, 26);
+            this.SearchButton.TabIndex = 6;
+            this.SearchButton.Text = "Search";
+            this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
-            // button2
+            // StopButton
             // 
-            this.button2.Location = new System.Drawing.Point(445, 26);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 26);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Stop";
-            this.button2.UseVisualStyleBackColor = true;
+            this.StopButton.Location = new System.Drawing.Point(445, 26);
+            this.StopButton.Name = "StopButton";
+            this.StopButton.Size = new System.Drawing.Size(75, 26);
+            this.StopButton.TabIndex = 6;
+            this.StopButton.Text = "Stop";
+            this.StopButton.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // SubFoldersCheckBox
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(526, 32);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(94, 20);
-            this.checkBox1.TabIndex = 7;
-            this.checkBox1.Text = "Subfolders";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.SubFoldersCheckBox.AutoSize = true;
+            this.SubFoldersCheckBox.Location = new System.Drawing.Point(526, 32);
+            this.SubFoldersCheckBox.Name = "SubFoldersCheckBox";
+            this.SubFoldersCheckBox.Size = new System.Drawing.Size(94, 20);
+            this.SubFoldersCheckBox.TabIndex = 7;
+            this.SubFoldersCheckBox.Text = "Subfolders";
+            this.SubFoldersCheckBox.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // SearchResultLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(232, 65);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 16);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Search result";
+            this.SearchResultLabel.AutoSize = true;
+            this.SearchResultLabel.Location = new System.Drawing.Point(195, 72);
+            this.SearchResultLabel.Name = "SearchResultLabel";
+            this.SearchResultLabel.Size = new System.Drawing.Size(85, 16);
+            this.SearchResultLabel.TabIndex = 8;
+            this.SearchResultLabel.Text = "Search result";
             // 
-            // listView1
+            // listView
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(12, 98);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(617, 412);
-            this.listView1.TabIndex = 9;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView.HideSelection = false;
+            this.listView.Location = new System.Drawing.Point(12, 98);
+            this.listView.Name = "listView";
+            this.listView.Size = new System.Drawing.Size(617, 412);
+            this.listView.TabIndex = 9;
+            this.listView.UseCompatibleStateImageBehavior = false;
+            this.listView.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -168,24 +174,51 @@
             this.columnHeader4.Text = "Last modified";
             this.columnHeader4.Width = 173;
             // 
+            // ListRadio
+            // 
+            this.ListRadio.AutoSize = true;
+            this.ListRadio.Location = new System.Drawing.Point(13, 72);
+            this.ListRadio.Name = "ListRadio";
+            this.ListRadio.Size = new System.Drawing.Size(48, 20);
+            this.ListRadio.TabIndex = 10;
+            this.ListRadio.Text = "List";
+            this.ListRadio.UseVisualStyleBackColor = true;
+            this.ListRadio.CheckedChanged += new System.EventHandler(this.ListRadio_CheckedChanged);
+            // 
+            // TileRadio
+            // 
+            this.TileRadio.AutoSize = true;
+            this.TileRadio.Checked = true;
+            this.TileRadio.Location = new System.Drawing.Point(68, 72);
+            this.TileRadio.Name = "TileRadio";
+            this.TileRadio.Size = new System.Drawing.Size(51, 20);
+            this.TileRadio.TabIndex = 11;
+            this.TileRadio.TabStop = true;
+            this.TileRadio.Text = "Tile";
+            this.TileRadio.UseVisualStyleBackColor = true;
+            this.TileRadio.CheckedChanged += new System.EventHandler(this.TileRadio_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(641, 522);
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.TileRadio);
+            this.Controls.Add(this.ListRadio);
+            this.Controls.Add(this.listView);
+            this.Controls.Add(this.SearchResultLabel);
+            this.Controls.Add(this.SubFoldersCheckBox);
+            this.Controls.Add(this.StopButton);
+            this.Controls.Add(this.SearchButton);
+            this.Controls.Add(this.DiskComboBox);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.KeyWordsTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.MaskTextBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "FileViewer";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,21 +226,23 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox MaskTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox KeyWordsTextBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ComboBox DiskComboBox;
+        private System.Windows.Forms.Button SearchButton;
+        private System.Windows.Forms.Button StopButton;
+        private System.Windows.Forms.CheckBox SubFoldersCheckBox;
+        private System.Windows.Forms.Label SearchResultLabel;
+        private System.Windows.Forms.ListView listView;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.RadioButton ListRadio;
+        private System.Windows.Forms.RadioButton TileRadio;
     }
 }
 
